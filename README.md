@@ -17,7 +17,7 @@ Set the `ETH_RPC_URL` environment variable to the URL of the archive node.
 Then run the following commands:
 
 ```
-python generate_snapshot.py fetch-users -o data/vlcvx-historical-holders.txt.gz
-python generate_snapshot.py fetch-balances data/vlcvx-historical-holders.txt.gz -o data/vlcvx-snapshot-balances.json.gz
-python generate_snapshot.py generate-snapshot data/vlcvx-snapshot-balances.json.gz -o data/airdrop.json
+python conicfinance/generate_snapshot.py fetch-users -o data/vlcvx-historical-holders.txt.gz
+python conicfinance/generate_snapshot.py fetch-balances data/vlcvx-historical-holders.txt.gz -o data/vlcvx-snapshot-balances.json.gz
+python conicfinance/generate_snapshot.py generate-snapshot data/vlcvx-snapshot-balances.json.gz -o data/airdrop.json
 ```
