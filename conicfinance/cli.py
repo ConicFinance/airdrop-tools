@@ -108,11 +108,11 @@ class MerkleCommand(Command):
             users = json.load(f)
         try:
             proof, value = generate_proof(self.args.address, users)
+            print(f"claimer: `{self.args.address}`")
             if value > 0:
-                print(f"user value: {value // 10 ** 18}")
-            print(f"node target index: {proof[1]}")
-            print("proof:")
-            print("\n".join([v.hex() for v in proof[0]]))
+                print(f"amount: `{value}`")
+            formatted_proof = [proof[1], [v.hex() for v in proof[0]]]
+            print("proof: `" + json.dumps(formatted_proof) + "`")
         except ValueError:
             print("Address not found")
 
